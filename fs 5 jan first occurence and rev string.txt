@@ -1,0 +1,42 @@
+/*bob are given a string and char to pack,
+pack task is to find first the occurence of char 
+and reverse the sting from that char and display whole string as output.
+Sample Test Case:
+input:
+efghabh
+h
+output:
+hgfeabh
+
+input:
+abazae
+z
+output:
+zabaae
+
+*/
+import java.util.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.nextLine();
+        char c1=sc.nextLine().charAt(0);
+        int ref=0;
+        for(int i=0;i<s1.length();i++){
+            if(s1.charAt(i)==c1){
+                ref=i;
+                break;
+            }
+        }
+        String result="";
+        for(int i=0;i<s1.length();i++){
+            if(i<=ref){
+                result=s1.charAt(i)+result;
+            }
+            else{
+                result+=s1.charAt(i);
+            }
+        }
+        System.out.println(result);
+    }
+}

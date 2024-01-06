@@ -1,0 +1,38 @@
+/*
+AlphaCipher is a string formed from another by rearranging its letters
+You are given two strings A and B,
+Print true, if B is an AlphaCipher of A,
+Otherwise false
+
+Sample 1 :
+dormitory dirtyroom //input
+true //output 
+
+Sample 2:
+car rat //input
+false //output
+
+*/
+import java.io.*;
+import java.util.*;
+class Test{
+    public static boolean alphaCipher(String A, String B){
+        if(A.length()!=B.length()){
+            return false;
+        }
+        int[] f1=new int[26];
+        int[] f2=new int[26];
+        for(int i=0;i<A.length();i++){
+            f1[A.charAt(i)-'a']++;
+            f2[B.charAt(i)-'a']++;
+        }
+        return Arrays.equals(f1, f2);
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        System.out.println(alphaCipher(A, B));
+        
+    }
+}
