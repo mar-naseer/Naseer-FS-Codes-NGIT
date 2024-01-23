@@ -1,0 +1,39 @@
+/*
+Write a program to find the four digit numbers, which are perfect squares, 
+and all the digits in that number are even. */
+
+import java.util.*;
+import java.io.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        boolean perfectSquare =false;
+        for(int j=1;j<=30;j++){
+            if(j*j==1){
+                perfectSquare=true;
+                break;
+            }
+        }
+        if(!perfectSquare){
+            System.out.print("No");
+            return;
+        }
+        boolean even = true;
+        int n=num;
+        while(n>0){
+            int digit=n%10;
+            if(digit%2!=0){
+                even=false;
+                    break;
+                }
+                n/=10;
+            }
+        if(even){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
