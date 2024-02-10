@@ -1,0 +1,61 @@
+Given a non-empty string, write a method to check if the spelling 
+correct
+
+The spelling is correct if:
+
+All letters are capital ABC
+All letters are lower case abc
+Only the first letter is capital, all others are lower case. 
+
+Input Format:
+----------------------
+String
+
+Output Format:
+------------------------
+Boolean value
+
+sample Testcase:1
+---------------------------
+Input:  Bazinga
+Output: true
+
+Sample Testcase:2
+----------------------------
+Input:  CoDe
+Output: false
+
+_______________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class v_27novp2 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+
+        boolean result = isCorrectSpelling(input);
+
+        System.out.println(result);
+
+        scanner.close();
+    }
+
+    private static boolean isCorrectSpelling(String input) {
+        if (input.equals(input.toUpperCase())) {
+            return true;
+        }
+
+        if (input.equals(input.toLowerCase())) {
+            return true;
+        }
+
+        if (Character.isUpperCase(input.charAt(0)) && input.substring(1).equals(input.substring(1).toLowerCase())) {
+            return true;
+        }
+
+        return false;
+    }
+}
