@@ -2,6 +2,7 @@
 A string is called a happy prefix if is a non-empty prefix which is also a suffix 
 (excluding itself).
 
+
 Given a string s, return the longest happy prefix of s. Return false if no such prefix exists.
 Example 1:
 
